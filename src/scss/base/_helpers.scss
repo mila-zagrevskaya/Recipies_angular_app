@@ -1,0 +1,17 @@
+// -----------------------------------------------------------------------------
+// This file contains CSS helper classes.
+// -----------------------------------------------------------------------------
+
+::-webkit-file-upload-button {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.m-hidden {
+  @media (max-width: $breakpoint-xs-max) {
+    display: none;
+  }
+}
