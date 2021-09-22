@@ -11,9 +11,13 @@
 @import 'base/helpers';
 @import 'base/typography';
 
-// 3. Components
+// 3. Common
+@import 'components/common/button';
+@import 'components/common/input';
+
+// 4. Components
 @import 'components/header';
 @import 'components/server-component';
 @import 'components/alerts';
 
-// 4. Layout
+// 5. Layout
