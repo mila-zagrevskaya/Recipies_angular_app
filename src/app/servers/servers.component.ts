@@ -24,7 +24,6 @@ export class ServersComponent {
   }
 
   onUpddateServerName(event: Event) {
-    console.log(event);
     this.serverName = (<HTMLInputElement>event.target).value;
   }
 }
