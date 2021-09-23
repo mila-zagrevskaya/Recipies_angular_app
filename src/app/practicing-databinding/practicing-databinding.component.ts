@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './practicing-databinding.component.html'
 })
 export class PracticingDatabindingComponent {
-  userName:string = 'userName';
+  userName:string = '';
 
   constructor() { }
 
