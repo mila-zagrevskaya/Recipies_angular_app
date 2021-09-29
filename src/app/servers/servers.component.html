@@ -2,11 +2,6 @@
 <div class="col-md-12">
   <div class="form-group col-md-4">
     <label for="" class="input-label">ServerName</label>
-    <!-- <input 
-      type="text" 
-      class="form-control"
-      (input)="onUpddateServerName($event)"
-     /> -->
     <input 
       type="text" 
       class="form-control"
@@ -17,7 +12,11 @@
   <div class="btn-group">
     <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
   </div>
-  <p>{{serverCreationStatus}}</p>
+  <p *ngIf="isServerCreated" else #noServer>Server was created! Name is {{serverName}}</p>
+  <ng-template #noServer>
+    <p>No Server was created</p>
+  </ng-template>
+
   <div class="content">
     <app-server></app-server> 
     <app-server></app-server>
@@ -25,5 +24,5 @@
   <!-- <warning-alert></warning-alert> -->
   <!-- <success-alert></success-alert> -->
   <hr/>
-  <app-practicing-databinding></app-practicing-databinding>
+  <!-- <app-practicing-databinding></app-practicing-databinding> -->
 </div>
