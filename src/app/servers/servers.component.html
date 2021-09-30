@@ -18,8 +18,7 @@
   </ng-template>
 
   <div class="content">
-    <app-server></app-server> 
-    <app-server></app-server>
+    <app-server *ngFor="let server of servers"></app-server>
   </div>
   <!-- <warning-alert></warning-alert> -->
   <!-- <success-alert></success-alert> -->
