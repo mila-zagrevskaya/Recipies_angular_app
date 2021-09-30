@@ -4,12 +4,13 @@
     <p *ngIf="displayDetails" class="button-label">Secret Password = 'tuna'</p>
   </div>
 
-  <ul class="col-md-3">
+  <ul class="col-md-6">
     <li 
-      *ngFor="let count of buttonClicks" 
-      [ngStyle]="{backgroundColor: getColor(count)}"
-      [ngClass]="{'white-text': count >= 5 }">
-    Click {{count}}
+      class="list-item"
+      *ngFor="let logItem of logClicks; let i = index;" 
+      [ngStyle]="{backgroundColor: i >= 4 ? 'blue' : 'transparent'}"
+      [ngClass]="{'white-text': i >= 4 }">
+    Click {{logItem}}
   </li>
   </ul>
 </div>
