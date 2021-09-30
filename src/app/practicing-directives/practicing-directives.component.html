@@ -1,0 +1,15 @@
+<div class="practicing-directives">
+  <div class="btn-group">
+    <button class="btn btn-primary" type="button" (click)="showDetails()">Display Details</button>
+    <p *ngIf="displayDetails" class="button-label">Secret Password = 'tuna'</p>
+  </div>
+
+  <ul class="col-md-3">
+    <li 
+      *ngFor="let count of buttonClicks" 
+      [ngStyle]="{backgroundColor: getColor(count)}"
+      [ngClass]="{'white-text': count >= 5 }">
+    Click {{count}}
+  </li>
+  </ul>
+</div>

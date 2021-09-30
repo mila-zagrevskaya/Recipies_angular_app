@@ -8,6 +8,7 @@ import { ServersComponent } from './servers';
 import { WarningAlert } from './WarningAlert';
 import { SuccessAlert } from './SuccessAlert';
 import { PracticingDatabindingComponent } from './practicing-databinding/practicing-databinding.component';
+import { PracticingDirectivesComponent } from './practicing-directives/practicing-directives.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { PracticingDatabindingComponent } from './practicing-databinding/practic
     ServersComponent,
     WarningAlert,
     SuccessAlert,
-    PracticingDatabindingComponent
+    PracticingDatabindingComponent,
+    PracticingDirectivesComponent
   ],
   imports: [
     BrowserModule,
