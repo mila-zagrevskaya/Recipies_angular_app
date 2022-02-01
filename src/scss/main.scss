@@ -5,10 +5,10 @@
 @import 'abstracts/mixins';
 
 // 2. Base stuff
+@import 'base/reset';
 @import 'base/base';
 @import 'base/fonts';
 @import 'base/helpers';
-// @import 'base/reset';
 @import 'base/typography';
 
 // 3. Components

@@ -24,10 +24,6 @@
   font-size: 20px;
   font-weight: 900;
 
-  .storage-card & {
-    font-size: 18px;
-  }
-
   .popup & {
     margin-bottom: 25px;
   }
@@ -56,26 +52,7 @@
 .title-2 {
   @extend .title;
   font-size: 14px;
-
-  .accordion & {
-    font-weight: 900;
-  }
-
-  .popup & {
-    font-weight: 900;
-    margin-bottom: 35px;
-  }
-
-  .popup-controls & {
-    text-align: left;
-  }
-  
-  .reports & {
-    font-weight: 900;
-    @media (min-width: $breakpoint-rg) {
-      font-size: 18px;
-    }
-  }
+  font-weight: 800;
 
   &.m-30 {
     margin-bottom: 30px;
@@ -93,11 +70,7 @@
 .title-3 {
   @extend .title;
   font-size: 14px;
-  
-  .card-content & {
-    font-weight: 700;
-    font-size: 14px;
-  }
+  font-weight: 700;
 
   @media (min-width: $breakpoint-rg) {
     font-size: 16px;
@@ -107,6 +80,7 @@
 .title-4 {
   @extend .title;
   font-size: 14px;
+  font-weight: 700;
 }
 
 .subtitle {
@@ -116,10 +90,6 @@
   width: 100%;
   text-align: center;
   margin-bottom: 10px;
-
-  .delete-content-popup & {
-    text-align: left;
-  }
 
   @media (min-width: $breakpoint-rg) {
     font-size: 16px;
@@ -159,15 +129,4 @@
 
 .text-left {
   text-align: left;
-}
-
-.paragraph {
-  .privacy-container & {
-    font-size: 16px;
-    margin-bottom: 30px;
-    line-height: 1.63;
-    letter-spacing: 0.4px;
-    text-align: left;
-    color: #2b2b2b;
-  }
 }
