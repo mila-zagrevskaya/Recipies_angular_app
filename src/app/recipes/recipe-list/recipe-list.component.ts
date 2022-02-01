@@ -5,7 +5,8 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './recipe-list.component.html'
 })
 export class RecipeListComponent implements OnInit {
-
+  recipes = [];
+  
   constructor() { }
 
   ngOnInit(): void {
