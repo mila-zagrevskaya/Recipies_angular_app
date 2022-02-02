@@ -5,10 +5,10 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './shopping-list.component.html'
 })
 export class ShoppingListComponent implements OnInit {
+  ingredients = [];
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
 }
