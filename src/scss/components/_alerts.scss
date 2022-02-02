@@ -1,0 +1,20 @@
+.warning-alert,
+.success-alert {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 20px;
+  border-radius: 5px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.warning-alert {
+  background-color: $yellow;
+}
+
+.success-alert {
+  background-color: $green-grey;
+  color: $white;
+}

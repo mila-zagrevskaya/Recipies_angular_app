@@ -5,13 +5,21 @@
 @import 'abstracts/mixins';
 
 // 2. Base stuff
+@import 'base/reset';
 @import 'base/base';
 @import 'base/fonts';
 @import 'base/helpers';
-@import 'base/reset';
 @import 'base/typography';
 
-// 3. Components
-@import 'components/header';
+// 3. Common
+@import 'components/common/button';
+@import 'components/common/input';
 
-// 4. Layout
+// 4. Components
+@import 'components/header';
+@import 'components/server-component';
+@import 'components/alerts';
+@import 'components/practicing-databinding.component.scss';
+@import 'components/practicing-directives.component.scss';
+
+// 5. Layout
