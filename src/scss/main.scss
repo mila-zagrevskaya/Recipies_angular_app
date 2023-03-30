@@ -5,13 +5,20 @@
 @import 'abstracts/mixins';
 
 // 2. Base stuff
+@import 'base/reset';
 @import 'base/base';
 @import 'base/fonts';
 @import 'base/helpers';
-@import 'base/reset';
 @import 'base/typography';
 
 // 3. Components
 @import 'components/header';
+@import 'components/recipes.scss';
+@import 'components/recipe-list';
+@import 'components/recipe-detail';
+@import 'components/recipe-item';
+@import 'components/shopping-list';
+@import 'components/shopping-edit';
 
-// 4. Layout
+// 4. Common
+@import 'components/common/buttons.scss';

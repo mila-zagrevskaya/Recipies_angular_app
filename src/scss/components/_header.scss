@@ -1,6 +1,14 @@
-.header {
-    background-color: $white;
-    display: flex;
-    justify-content: flex-end;
-    padding: 15px 30px;
+.navbar-header {
+  width: 100%;
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+.navbar-nav {
+  display: flex;
+  flex-direction: row;
+}
+
+.navbar-brand {
+  font-size: 32px;
 }

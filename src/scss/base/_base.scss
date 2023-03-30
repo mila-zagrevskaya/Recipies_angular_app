@@ -8,6 +8,7 @@ html {
   height: 100%;
   -webkit-tap-highlight-color: transparent;
   -webkit-overflow-scrolling: touch;
+  font-family: Open Sans, Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .body {
@@ -87,6 +88,7 @@ a {
 
 .container {
   height: 100%;
+  padding: 0;
 }
 
 
@@ -114,6 +116,7 @@ a {
   justify-content: space-between;
   flex: 1 1;
   min-width: 0%;
+  padding-bottom: 30px;
 }
 
 .main-content {
