@@ -9,6 +9,7 @@
     <app-recipe-item
       *ngFor="let recipe of recipes" 
       [recipeItem] = "recipe"
+      (emitRecipeFromButton)="onRecipeClick($event)"
     ></app-recipe-item>
   </div>
 </div>
