@@ -20,11 +20,9 @@ export class ShoppingEditComponent implements OnInit {
   ingredientNew: Ingredient;
 
   addNewIngredient() {
-    this.ingredientNew = new Ingredient(
+    this.newIngredient.emit(new Ingredient(
       this.nameInput.nativeElement.value, 
       this.amountInput.nativeElement.value
-    )
-
-    this.newIngredient.emit(this.ingredientNew);
+    ));
   }
 }
