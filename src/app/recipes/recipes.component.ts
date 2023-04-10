@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { Recipe } from '../recipes/recipe.model';
 
@@ -6,14 +6,8 @@ import { Recipe } from '../recipes/recipe.model';
   selector: 'app-recipes',
   templateUrl: './recipes.component.html'
 })
-export class RecipesComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-  selectedRecipe: Recipe;
+export class RecipesComponent {
+  selectedRecipe: Recipe = {name: '', description: '', imagePath: ''};
 
   onShowRecipeDetails (event: Recipe) {
     this.selectedRecipe = event;
