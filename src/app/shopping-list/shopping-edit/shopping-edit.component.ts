@@ -13,11 +13,18 @@ export class ShoppingEditComponent {
 
   ingredientNew: Ingredient;
 
+  isBtnDisabled:boolean = true;
+
   addNewIngredient(): void {
+    console.log('this.ingredientNew', this.ingredientNew);
     this.ingredientNew = new Ingredient(
-      this.nameInput && this.nameInput.nativeElement.value, 
-      this.amountInput && this.amountInput.nativeElement.value
+      this.nameInput.nativeElement.value, 
+      this.amountInput.nativeElement.value
       )
-    this.newIngredientAdded.emit(this.ingredientNew);
-    }
+      this.newIngredientAdded.emit(this.ingredientNew);
+  }
+
+  onInputChange(): void {
+    this.isBtnDisabled = !this.nameInput?.nativeElement.value || !this.amountInput.nativeElement.value;
+  }
 }
