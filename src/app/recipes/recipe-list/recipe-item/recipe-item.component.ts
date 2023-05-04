@@ -1,4 +1,5 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { RecipeService } from 'src/app/services/recipe.service';
 
 import { Recipe } from '../../recipe.model';
 
@@ -8,9 +9,10 @@ import { Recipe } from '../../recipe.model';
 })
 export class RecipeItemComponent {
   @Input() recipeItem: Recipe = {name: '', description: '', imagePath: ''};
-  @Output() emitRecipeFromButton = new EventEmitter<Recipe>();
+
+  constructor(private recipeService: RecipeService) {}
 
   onButtonClick(event: Recipe) {
-    this.emitRecipeFromButton.emit(event);
+    this.recipeService.onShowRecipeDetails(event);
   }
 }
