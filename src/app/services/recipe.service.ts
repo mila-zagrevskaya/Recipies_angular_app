@@ -14,6 +14,10 @@ export class RecipeService {
 
   selectedRecipe: Recipe;
 
+  getRecipes() {
+   return this.recipes.slice();
+  }
+
   onShowRecipeDetails (event: Recipe) {
     this.selectedRecipe = event;
     this.recipeChanged.emit(event)
