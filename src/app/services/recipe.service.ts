@@ -19,8 +19,8 @@ export class RecipeService {
    return this.recipes.slice();
   }
 
-  onShowRecipeDetails (event: Recipe) {
-    this.selectedRecipe = event;
-    this.recipeSelected.emit(event)
+  onShowRecipeDetails (recipe: Recipe) {
+    this.selectedRecipe = recipe;
+    this.recipeSelected.emit(recipe)
   }
 }

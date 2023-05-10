@@ -14,10 +14,11 @@ export class ShoppingListComponent {
   constructor(private shoppingListService: ShoppingListService) {}
 
   ngOnInit() {
-    this.ingredients = this.shoppingListService.ingredients;
-  }
-
-  addNewIngredientToList(ingredient: Ingredient) {
-    this.shoppingListService.addNewIngredientToList(ingredient);
+    this.ingredients = this.shoppingListService.getIngredients();
+    this.shoppingListService.ingredientsChanged.subscribe(
+      (ingredients: Ingredient[]) => {
+        this.ingredients = ingredients;
+      }
+    );
   }
 }
