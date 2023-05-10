@@ -3,7 +3,8 @@ import { Recipe } from "../recipes/recipe.model";
 
 @Injectable()
 export class RecipeService {
-  recipeChanged = new EventEmitter<Recipe>()
+  recipeSelected = new EventEmitter<Recipe>();
+
   recipes: Recipe[] = [
     new Recipe('A Test Recipe 1', 'This is simply a test 1 ', 'https://d47gxy3fatgwk.cloudfront.net/wp-content/uploads/2019/06/oven-baked-beef-brisket-206.jpg'),
     new Recipe('A Test Recipe 2', 'This is simply a test 2', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQptgM_Xeou7ua4JazwuCjoEyZcYOaQ0SASNg&usqp=CAU'),
@@ -20,6 +21,6 @@ export class RecipeService {
 
   onShowRecipeDetails (event: Recipe) {
     this.selectedRecipe = event;
-    this.recipeChanged.emit(event)
+    this.recipeSelected.emit(event)
   }
 }

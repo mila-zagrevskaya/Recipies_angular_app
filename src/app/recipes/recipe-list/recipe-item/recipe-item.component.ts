@@ -12,7 +12,7 @@ export class RecipeItemComponent {
 
   constructor(private recipeService: RecipeService) {}
 
-  onButtonClick(event: Recipe) {
-    this.recipeService.onShowRecipeDetails(event);
+  onSelectedRecipe(recipe: Recipe) {
+    this.recipeService.onShowRecipeDetails(recipe);
   }
 }
