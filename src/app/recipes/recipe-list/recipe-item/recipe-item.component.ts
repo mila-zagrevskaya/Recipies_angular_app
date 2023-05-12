@@ -8,7 +8,7 @@ import { Recipe } from '../../recipe.model';
   templateUrl: './recipe-item.component.html'
 })
 export class RecipeItemComponent {
-  @Input() recipeItem: Recipe = {name: '', description: '', imagePath: ''};
+  @Input() recipeItem: Recipe = {name: '', description: '', imagePath: '', ingredients: []};
 
   constructor(private recipeService: RecipeService) {}
 
