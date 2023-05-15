@@ -57,8 +57,6 @@ export class RecipeService {
       ]),
   ];
 
-  selectedRecipe: Recipe;
-
   constructor(private shoppingListService: ShoppingListService){}
 
   getRecipes() {
@@ -66,7 +64,6 @@ export class RecipeService {
   }
 
   onShowRecipeDetails (recipe: Recipe) {
-    this.selectedRecipe = recipe;
     this.recipeSelected.emit(recipe)
   }
 
