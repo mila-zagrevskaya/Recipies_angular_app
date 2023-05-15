@@ -1,6 +1,9 @@
 import { EventEmitter, Injectable } from "@angular/core";
+
 import { Recipe } from "../recipes/recipe.model";
 import { Ingredient } from "../shared/ingredient.model";
+
+import { ShoppingListService } from "./shopping-list.service";
 
 @Injectable()
 export class RecipeService {
@@ -16,7 +19,7 @@ export class RecipeService {
         new Ingredient('French Fries', 20),
       ]),
     new Recipe(
-      'A Test Recipe 2',
+      'Grilled sweet potatoes',
       'This is simply a test 2',
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQptgM_Xeou7ua4JazwuCjoEyZcYOaQ0SASNg&usqp=CAU',
       [
@@ -25,7 +28,7 @@ export class RecipeService {
         new Ingredient('Parsley', 1),
       ]),
     new Recipe(
-      'A Test Recipe 3',
+      'Enchilada',
       'This is simply a test 3',
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJjDVxCVxGsxA0WPRc8AIgIzVHh5TyLzAA4w&usqp=CAU',
       [
@@ -34,7 +37,7 @@ export class RecipeService {
         new Ingredient('Meat', 1),
       ]),
     new Recipe(
-      'A Test Recipe 4',
+      'Garlic Butter Chicken Bites with Lemon Asparagus',
       'This is simply a test 4',
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDMaZ_QPCB0FIi4hMGovw--Dm7zJljWFkJ-w&usqp=CAU',
       [
@@ -43,7 +46,7 @@ export class RecipeService {
         new Ingredient('Lemon', 1),
       ]),
     new Recipe(
-      'A Test Recipe 5',
+      'Soufflé omelette',
       'This is simply a test 5',
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_G71ifSIxMIF9MFME_z7dtsWX3lqZ_rRXUg&usqp=CAU',
       [
@@ -56,6 +59,8 @@ export class RecipeService {
 
   selectedRecipe: Recipe;
 
+  constructor(private shoppingListService: ShoppingListService){}
+
   getRecipes() {
    return this.recipes.slice();
   }
@@ -63,5 +68,9 @@ export class RecipeService {
   onShowRecipeDetails (recipe: Recipe) {
     this.selectedRecipe = recipe;
     this.recipeSelected.emit(recipe)
+  }
+
+  addIngredientsToShoppingList(ingredients: Ingredient[]){
+    this.shoppingListService.addIngredients(ingredients);
   }
 }
