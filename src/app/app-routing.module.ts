@@ -4,13 +4,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { RecipesComponent } from './recipes/recipes.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 
-const routes: Routes = [
-  { path: 'recipes', component: RecipesComponent },
-  { path: 'shopping_list', component: ShoppingListComponent },
+const appRoutes: Routes = [
+  { path: '', component: RecipesComponent, pathMatch: 'full' },
+  { path: 'recipes', component: RecipesComponent},
+  { path: 'shopping-list', component: ShoppingListComponent},
+  { path: '**', redirectTo: '/not-found', pathMatch: 'full' }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(appRoutes)],
   exports: [RouterModule]
 })
 

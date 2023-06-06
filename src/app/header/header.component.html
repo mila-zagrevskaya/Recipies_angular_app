@@ -9,8 +9,8 @@
 
         <div class="navbar-collapse" [ngClass]="{ collapse: collapsed }" (window:resize)="collapsed = true">
           <ul class="nav navbar-nav">
-            <li><a routerLink="/recipes" routerLinkActive="active" (click)="onSelect('recipes')" >Recipes</a></li>
-            <li><a routerLink="/shopping_list" routerLinkActive="active" (click)="onSelect('shopping_list')">Shopping List</a></li>
+            <li><a routerLink="/recipes" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" >Recipes</a></li>
+            <li><a routerLink="/shopping-list" routerLinkActive="active">Shopping List</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown" appDropdown>
