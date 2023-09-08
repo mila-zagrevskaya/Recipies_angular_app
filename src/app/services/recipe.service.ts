@@ -67,10 +67,6 @@ export class RecipeService {
     return this.recipes[index];
   }
 
-  onShowRecipeDetails (recipe: Recipe) {
-    this.recipeSelected.emit(recipe)
-  }
-
   addIngredientsToShoppingList(ingredients: Ingredient[]){
     this.shoppingListService.addIngredients(ingredients);
   }
