@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit,  } from '@angular/core';
+import { ActivatedRoute, Router, Params } from '@angular/router';
 
 import { RecipeService } from 'src/app/services/recipe.service';
 
@@ -10,15 +11,31 @@ import { Ingredient } from './../../shared/ingredient.model';
   templateUrl: './recipe-detail.component.html'
 })
 export class RecipeDetailComponent implements OnInit{
+  @Input() index: number;
   recipe: Recipe;
+  id: number;
 
-  constructor(private recipeService: RecipeService){}
+  constructor(private recipeService: RecipeService, private route: ActivatedRoute,
+    private router: Router ){
+  }
 
   ngOnInit(): void {
-    this.recipeService.recipeSelected.subscribe((recipe) => { this.recipe = recipe; })
+    this.route.params
+      .subscribe(
+        (params: Params) => {
+          this.id = +params['id'];
+          this.recipe = this.recipeService.getRecipe(this.id);
+        }
+      )
   }
 
   onAddToShoppingList(ingredients: Ingredient[]){
     this.recipeService.addIngredientsToShoppingList(this.recipe.ingredients);
+  }
+
+  onEditRecipe() {
+    this.router.navigate(['edit'], {relativeTo: this.route})
+    //alternative way:
+    // this.router.navigate(['../', this.id ,'edit'], {relativeTo: this.route})
   }
 }

@@ -63,8 +63,8 @@ export class RecipeService {
    return this.recipes.slice();
   }
 
-  onShowRecipeDetails (recipe: Recipe) {
-    this.recipeSelected.emit(recipe)
+  getRecipe(index: number) {
+    return this.recipes[index];
   }
 
   addIngredientsToShoppingList(ingredients: Ingredient[]){

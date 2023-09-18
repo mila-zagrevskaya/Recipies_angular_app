@@ -1,7 +1,5 @@
 import { Component, Input } from '@angular/core';
 
-import { RecipeService } from 'src/app/services/recipe.service';
-
 import { Recipe } from '../../recipe.model';
 
 @Component({
@@ -9,11 +7,9 @@ import { Recipe } from '../../recipe.model';
   templateUrl: './recipe-item.component.html'
 })
 export class RecipeItemComponent {
-  @Input() recipeItem: Recipe = {name: '', description: '', imagePath: '', ingredients: []};
+  @Input() recipeItem: Recipe;
+  @Input() index: number;
 
-  constructor(private recipeService: RecipeService) {}
-
-  onSelectedRecipe(recipe: Recipe) {
-    this.recipeService.onShowRecipeDetails(recipe);
+  ngOnInit(){
   }
 }

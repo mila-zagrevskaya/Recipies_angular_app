@@ -1,13 +1,12 @@
-<a href="#" class="list-group-item" (click)="onSelectedRecipe(recipeItem)">
+<a 
+  [routerLink]="[index]"
+  routerLinkActive="active" 
+  class="list-group-item c-pointer">
   <div class="pull-left">
     <h4 class="title-2 list-group-item-heading">{{ recipeItem.name }}</h4>
     <p class="list-group-item-text">{{ recipeItem.description }}</p>
   </div>
   <span class="pull-right">
-    <img 
-      [src]="recipeItem.imagePath"
-      alt="{{ recipeItem.name }}"
-      class="img-responsive recipe-image"
-    />
+    <img [src]="recipeItem.imagePath" alt="{{ recipeItem.name }}" class="img-responsive recipe-image" />
   </span>
 </a>
