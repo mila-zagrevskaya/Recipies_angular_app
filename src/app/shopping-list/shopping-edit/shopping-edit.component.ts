@@ -1,4 +1,5 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { ShoppingListService } from 'src/app/services/shopping-list.service';
 
 import { Ingredient } from './../../shared/ingredient.model';
@@ -7,25 +8,16 @@ import { Ingredient } from './../../shared/ingredient.model';
   selector: 'app-shopping-edit',
   templateUrl: './shopping-edit.component.html'
 })
-export class ShoppingEditComponent {
-  @ViewChild('nameInput') nameInput: ElementRef;
-  @ViewChild('amountInput') amountInput: ElementRef;
-
-  ingredientNew: Ingredient;
-
-  isBtnDisabled:boolean = true;
+export class ShoppingEditComponent implements OnInit {
 
   constructor( private shoppingListService: ShoppingListService){}
 
-  addNewIngredient(): void {
-    this.ingredientNew = new Ingredient(
-      this.nameInput.nativeElement.value, 
-      this.amountInput.nativeElement.value
-      );
-      this.shoppingListService.addNewIngredientToList(this.ingredientNew);
+  ngOnInit() {
   }
 
-  onInputChange(): void {
-    this.isBtnDisabled = !this.nameInput?.nativeElement.value || !this.amountInput.nativeElement.value;
+  onAddItem(form: NgForm): void {
+    const value = form.value
+    const newIngredient = new Ingredient(value.name, value.amount);
+    this.shoppingListService.addNewIngredientToList(newIngredient);
   }
 }
