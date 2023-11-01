@@ -3,19 +3,21 @@ import { HttpClient } from "@angular/common/http";
 import { catchError } from "rxjs/operators";
 import { throwError } from "rxjs";
 
-interface AuthResponseData {
+export interface AuthResponseData {
   kind: string;
   idToken: string;
   email: string;
   refreshToken: string;
   expiresIn: string;
   localId: string;
+  registered?: boolean;
 }
 
 @Injectable()
 export class AuthService {
   AUTH_ENDPOINT: string = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDev_rd_GEcugs3NzPcOiKrUEZBBWUE4iw';
-  
+  LOGIN_ENDPOINT: string = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithCustomToken?key=AIzaSyDev_rd_GEcugs3NzPcOiKrUEZBBWUE4iw'
+
   constructor(private http: HttpClient) {}
 
   signup(email: string, password: string) {
@@ -37,8 +39,19 @@ export class AuthService {
         case 'EMAIL_EXISTS':
           errorMessage = 'This email exists already';
       }
-      
+
       return throwError(errorMessage);
     }));
+  }
+
+  login(email: string, password: string) {
+    return this.http.post<AuthResponseData>(
+      this.LOGIN_ENDPOINT, 
+      {
+        email: email,
+        password: password,
+        returnSecureToken: true
+      }
+    )
   }
 }
