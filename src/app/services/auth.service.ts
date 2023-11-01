@@ -12,13 +12,13 @@ interface AuthResponseData {
 
 @Injectable()
 export class AuthService {
-  authEndpoint: string = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDev_rd_GEcugs3NzPcOiKrUEZBBWUE4iw';
+  AUTH_ENDPOINT: string = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDev_rd_GEcugs3NzPcOiKrUEZBBWUE4iw';
   
   constructor(private http: HttpClient) {}
 
   signup(email: string, password: string) {
     return this.http.post<AuthResponseData>(
-      this.authEndpoint,
+      this.AUTH_ENDPOINT,
       {
         email: email,
         password: password,
